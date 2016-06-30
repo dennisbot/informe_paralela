@@ -1,0 +1,406 @@
+@TechReport{ mpiforum:94,
+  author    = "{MPI Forum}",
+  title     = "{MPI}: {A} Message-Passing Interface Standard",
+  number    = "UT-CS-94-230",
+institution = "University of Tennessee, Knoxville",
+  year      = "1994",
+}
+
+@TechReport{ mpiforum:96,
+  author    = "{MPI Forum}",
+  title     = "{MPI-2}: {E}xtensions to the Message-Passing Interface",
+  institution = "University of Tennessee, Knoxville",
+  year      = "1996",
+}
+
+@misc{ mpiforum:09,
+    author    = "{MPI Forum}",
+    title     = "{MPI}: {A} message-passing interface standard.  {V}ersion 2.2.",
+    month     = sep,
+    year      = 2009
+}
+
+@misc{ mpiforum:12,
+    author    = "{MPI Forum}",
+    title     = "{MPI}: {A} message-passing interface standard.  {V}ersion 3.0.",
+    month     = nov,
+    year      = 2012
+}
+
+@techreport{ vandam:tr:08,
+  title         = {Is {MPI-2} suitable for Quantum Chemistry? Performance of passive target one-sided communications},
+  author        = {H.J.J. van Dam and M. Wang and A.G. Sunderland and I.J. Bush and P.J. Knowles and M.F. Guest},
+  institution   = {UoE HPCX Ltd.},
+  number        = {HPCxTR0807},
+  year          = 2008
+}
+
+@article{ bonachea:ijhpcn:04,
+ author         = {Bonachea, Dan and Duell, Jason},
+ title          = {Problems with using {MPI} 1.1 and 2.0 as compilation targets for parallel language implementations},
+ journal        = {Int. J. High Perform. Comput. Netw.},
+ volume         = {1},
+ issue          = {1-3},
+ month          = {August},
+ year           = {2004},
+ pages          = {91--99},
+ doi            = {10.1504/IJHPCN.2004.007569},
+ publisher      = {Inderscience Publishers},
+ address        = {Inderscience Publishers, Geneva, SWITZERLAND},
+}
+
+@inproceedings{ tipparaju:09,
+  title = {Investigating High Performance {RMA} Interfaces for the {MPI-3} Standard},
+  author= {Vinod Tipparaju and William Gropp and Hubert Ritzdorf and Rajeev Thakur and Jesper L. Tr\"aff},
+  booktitle = {Proc. 38th Intl. Conf. on Parallel Processing (ICPP)},
+  month = {September},
+  year = {2009},
+}
+
+@article{ latham:07,
+  author = {Latham, Robert and Ross, Robert and Thakur, Rajeev},
+  title = {{Implementing MPI-IO Atomic Mode and Shared File Pointers Using MPI
+  One-Sided Communication}},
+  journal = {International Journal of High Performance Computing Applications},
+  volume = {21},
+  number = {2},
+  pages = {132--143},
+  doi = {10.1177/1094342007077859},
+  year = {2007},
+  abstract = {The ROMIO implementation of the MPI-IO standard provides a
+  portable infrastructure for use on top of a variety of underlying storage
+  targets. These targets vary widely   in their capabilities, and in some cases
+  additional effort is needed within ROMIO to support all MPI-IO semantics. Two
+  aspects of the interface that can be problematic  to implement are MPI-IO
+  atomic mode and the shared file pointer access routines. Atomic mode requires
+  enforcing strict consistency semantics, and   shared file pointer routines
+  require communication and coordination in order to atomically update a shared
+  resource. For some file systems, native locks may be used to implement these
+  features, but not all file systems have lock support. In this work, we
+  describe algorithms for implementing efficient mutex locks using MPI-1 and
+  the one-sided capabilities from MPI-2. We then show how these algorithms may
+  be used   to implement both MPI-IO atomic mode and shared file pointer
+  methods for ROMIO without requiring any features from the underlying file
+  system. We show that these  algorithms can outperform traditional file system
+  lock approaches. Because of the portable nature of these algorithms, they are
+  likely useful in a variety of  situations where distributed locking or
+  coordination is needed in the MPI-2 environment.  },
+  url = {http://hpc.sagepub.com/cgi/content/abstract/21/2/132},
+  pdf = {papers/latham_rmaops.pdf},
+  eprint = {http://hpc.sagepub.com/cgi/reprint/21/2/132.pdf}
+}
+
+@Article( avl:62,
+  Key="Adelson-Velskii et al.",
+  Author="G. M.  {Adelson-Velski\u i} and E. M. Landis",
+  Title="An Algorithm for the Organization of Information",
+  Journal="Soviet Mathmatics",
+  Volume="3",
+  Number="5",
+  Pages="1259--1262",
+  Year="1962",
+  Note="Translated from Russian {\it Doklady, Akademi\u i Nauk SSSR} {\bf 146}:263--266.")
+}
+
+@InProceedings{cui10:earthquake_sim,
+  author =   {Y. Cui and K. B. Olsen and T. H. Jordan and K. Lee
+                  and J. Zhou and P. Small and D. Roten and G. Ely and
+                  D.K. Panda and A. Chourasia and J. Levesque and
+                  S. M. Day and P. Maechling},
+  title =    {{Scalable Earthquake Simulation on Petascale
+                  Supercomputers}},
+  booktitle =    {Proceedings of the IEEE/ACM International Conference
+                  for High Performance Computing, Networking, Storage
+                  and Analysis},
+  year =     2010,
+  address =  {New Orleans, LA},
+  month =    {Nov}
+}
+
+@InProceedings{potluri10:rma_siesmic,
+  author =   {S. Potluri and P. Lai and K. Tomko and S. Sur and
+                  Y. Cui and M. Tatineni andK. Schulz and W. Barth and
+                  A. Majumdar and D. K. Panda},
+  title =    {{Quantifying Performance Benefits of Overlap using
+                  MPI-2 in a Seismic Modeling Application}},
+  booktitle =    {Proceedings of ACM International Conference on
+                  Supercomputing (ICS)},
+  year =     2010,
+  address =  {Tsukuba, Japan}
+}
+
+@Article{thacker03:hydra_mpi,
+  author =   {{Thacker R. J., Pringle, G., Couchman H. M. P and
+                  Booth, S.}},
+  title =    {HYDRA-MPI: An Adaptive Particle-Particle,
+                  Particle-Mesh code for conducting Cosmological
+                  Simulations on MPP Architectures},
+  journal =  {High Performance Computing Systems and Applications},
+  year =     2003
+}
+
+@inproceedings{lai-isc10,
+  author =   {P. Lai and S. Sur and D. K. Panda},
+  title =    {{Designing Truly One-Sided MPI-2 RMA Intra-node
+                  Communication on Multi-core Systems}},
+  booktitle =    {{International Supercomputing Conference (ISC)}},
+  month =    {June},
+  year =     2010,
+  location =     {Hamburg, Germany}
+}
+
+
+@TechReport{Hoefler:2013:MCS:RMA,
+    author         =  {Hoefler, Torsten and Dinan, James and Thakur, Rajeev and Barrett, Brian and Balaji, Pavan and Gropp, William and Underwood, Keith},
+    title          =  {Remote Memory Access Programming in MPI-3},
+    institution    =  {Argonne National Laboratory},
+    type           =  {Preprint},
+    year           =  2013,
+    number         =  {ANL/MCS-P4062-0413-1},
+    url            =  {http://www.mcs.anl.gov/papers/P4062-0413_1.pdf},
+}
+
+@inproceedings{dinan:eurompi:11,
+    author = {Dinan, James and Krishnamoorthy, Sriram and Balaji, Pavan and Hammond, Jeff R. and Krishnan, Manojkumar and Tipparaju, Vinod and Vishnu, Abhinav},
+    title = {Noncollective communicator creation in {MPI}},
+    booktitle = {Proceedings of the 18th European MPI Users' Group conference on Recent advances in the message passing interface},
+    series = {EuroMPI'11},
+    year = {2011},
+    isbn = {978-3-642-24448-3},
+    location = {Santorini, Greece},
+    pages = {282--291},
+    numpages = {10},
+    url = {http://dl.acm.org/citation.cfm?id=2042476.2042508},
+    acmid = {2042508},
+    publisher = {Springer-Verlag},
+    address = {Berlin, Heidelberg},
+}
+
+@Misc{ticket34,
+  author      = {George Bosilca},
+  title       = "{Extend predefined MPI\_Op's to user defined datatypes composed of a single, predefined type}",
+  year        = {2008},
+  url         = {https://svn.mpi-forum.org/trac/mpi-forum-web/ticket/34},
+}
+
+@Misc{ticket338,
+  author      = {Dave Goodell and James Dinan},
+  title       = {{MPI\_Accumulate}-style Behavior For Predefined Reduction Operations},
+  year        = {2012},
+  url         = {https://svn.mpi-forum.org/trac/mpi-forum-web/ticket/338},
+}
+
+@Misc{ticket339,
+  author      = {James Dinan},
+  title       = {User-defined op with derived datatypes yields space-inefficient reduce},
+  year        = {2012},
+  url         = {https://svn.mpi-forum.org/trac/mpi-forum-web/ticket/339},
+}
+
+@Misc{ticket423,
+  author      = {Jeff Hammond},
+  title       = {Add {MPI\_Type\_contiguous\_x}},
+  year        = {2014},
+  url         = {https://svn.mpi-forum.org/trac/mpi-forum-web/ticket/423},
+}
+
+@Misc{ticket430,
+  author      = {Jeff Hammond},
+  title       = {Large-count v-collectives},
+  year        = {2014},
+  url         = {https://svn.mpi-forum.org/trac/mpi-forum-web/ticket/430},
+}
+
+@Misc{ticket457,
+  author      = {Jesper Tr{\"a}ff and Torsten H{\"o}fler},
+  title       = {Exposing progress in generalized requests},
+  year        = {2007},
+  url         = {https://svn.mpi-forum.org/trac/mpi-forum-web/ticket/457},
+}
+
+@Misc{ticket26,
+  author      = {Torsten H{\"o}fler},
+  title       = {Add a callback function if a request completes},
+  year        = {2008},
+  url         = {https://svn.mpi-forum.org/trac/mpi-forum-web/ticket/26},
+}
+
+@Misc{ticket265,
+  author      = {Fab Tillier},
+  title       = {Support for large counts using derived datatypes},
+  year        = {2011},
+  url         = {https://svn.mpi-forum.org/trac/mpi-forum-web/ticket/265},
+}
+
+@Misc{squyres-blog-large-count,
+  author      = {Jeff Squyres},
+  title       = {New things in {MPI}-3: {MPI\_Count}},
+  year        = {2011},
+  url         = {http://blogs.cisco.com/performance/new-things-in-mpi-3-mpi\_count/},
+}
+
+@Misc{ticketXYZ,
+  author      = {},
+  title       = {},
+  year        = {},
+  url         = {https://svn.mpi-forum.org/trac/mpi-forum-web/ticket/XYZ},
+}
+
+@InProceedings{thakur:mpi-io-implement,
+  author = {Rajeev Thakur and William Gropp and Ewing Lusk},
+  title = {On Implementing {MPI-IO} Portably and with High Performance},
+  booktitle = {Proceedings of the Sixth Workshop on Input/Output in Parallel
+  and Distributed Systems},
+  year = {1999},
+  month = {May},
+  pages = {23--32},
+  earlier = {thakur:mpi-io-implement-tr},
+  URL = {http://www.mcs.anl.gov/~thakur/papers/mpio-impl.ps},
+  keywords = {parallel I/O, multiprocessor file system interface, pario-bib},
+  abstract = {We discuss the issues involved in implementing MPI-IO portably on
+  multiple machines and file systems and also achieving high performance. One
+  way to implement MPI-IO portably is to implement it on top of the basic Unix
+  I/O functions ({\tt open}, {\tt lseek}, {\tt read}, {\tt write}, and {\tt
+  close}), which are themselves portable. We argue that this approach has
+  limitations in both functionality and performance. We instead advocate an
+  implementation approach that combines a large portion of portable code and a
+  small portion of code that is optimized separately for different machines and
+  file systems. We have used such an approach to develop a high-performance,
+  portable MPI-IO implementation, called ROMIO. \par In addition to basic I/O
+  functionality, we consider the issues of supporting other MPI-IO features,
+  such as 64-bit file sizes, noncontiguous accesses, collective I/O,
+  asynchronous I/O, consistency and atomicity semantics, user-supplied hints,
+  shared file pointers, portable data representation, and file preallocation.
+  We describe how we implemented each of these features on various machines and
+  file systems. The machines we consider are the HP Exemplar, IBM SP, Intel
+  Paragon, NEC SX-4, SGI Origin2000, and networks of workstations; and the file
+  systems we consider are HP HFS, IBM PIOFS, Intel PFS, NEC SFS, SGI XFS, NFS,
+  and any general Unix file system (UFS). \par We also present our thoughts on
+  how a file system can be designed to better support MPI-IO. We provide a list
+  of features desired from a file system that would help in implementing MPI-IO
+  correctly and with high performance.}
+}
+
+@Book{posix-std,
+  author =       "{IEEE}",
+  title =        "{2004 (ISO\slash IEC) [IEEE\slash ANSI Std 1003.1,
+                 2004 Edition] Information Technology --- Portable
+                 Operating System Interface (POSIX\textregistered{}) ---
+                 Part 1: System Application: Program Interface (API) [C
+                 Language]}",
+  publisher =    "IEEE",
+  address =      "New York, NY USA",
+  year =         "2004",
+}
+
+@INPROCEEDINGS{cactus:SC01,
+  ABSTRACT = {},
+  ADDRESS = {Denver, CO},
+  AUTHOR = {G. Allen and T. Dramlitsch and I. Foster and N. Karonis and M. Ripeanu and E. Seidel and B. Toonen},
+  BOOKTITLE = {SC '01: Proceedings of the 2001 ACM/IEEE conference on Supercomputing},
+  KEYWORD = {cactuscode,computerscience,general},
+  TITLE = "{Supporting efficient execution in heterogeneous distributed computing environments with Cactus and Globus}",
+  URL = {http://portal.acm.org/citation.cfm?coll=GUIDE&dl=GUIDE&id=582086},
+  URLPDF = {http://www.cactuscode.org/Articles/Cactus_Allen01e.pre.pdf},
+  YEAR = {2001}
+}
+
+@article{gromacs,
+author = {Hess, Berk and Kutzner, Carsten and van der Spoel, David and Lindahl, Erik},
+title = "{GROMACS 4, algorithms for highly efficient, load-balanced, and scalable molecular simulation}",
+journal = {Journal of Chemical Theory and Computation},
+volume = {4},
+number = {3},
+pages = {435-447},
+year = {2008},
+doi = {10.1021/ct700301q},
+
+URL = {http://pubs.acs.org/doi/abs/10.1021/ct700301q},
+eprint = {http://pubs.acs.org/doi/pdf/10.1021/ct700301q}
+}
+
+@inproceedings{libgeodecomp,
+ author = {Schäfer, Andreas and Fey, Dietmar},
+ title = "{LibGeoDecomp: A Grid-Enabled Library for Geometric Decomposition Codes}",
+ booktitle = {Proceedings of the 15th European PVM/MPI Users' Group Meeting on Recent Advances in Parallel Virtual Machine and Message Passing Interface},
+ year = {2008},
+ isbn = {978-3-540-87474-4},
+ pages = {285--294},
+ location = {Dublin, Ireland},
+ publisher = {Springer},
+ address = {Berlin, Heidelberg}
+}
+
+@inproceedings{physis,
+  address = {Seattle, WA},
+  author = {Maruyama, Naoya and Nomura, Tatsuo and Sato, Kento and
+                  Matsuoka, Satoshi},
+  booktitle = {SC '11: Proceedings of the 2011 ACM/IEEE conference on Supercomputing},
+  title = "{Physis: An implicitly parallel programming model for
+                  stencil computations on large-scale GPU-accelerated
+                  supercomputers}",
+  year = {2011}
+}
+
+@inproceedings{jenkins2012enabling,
+  title={Enabling fast, noncontiguous GPU data movement in hybrid {MPI+GPU} environments},
+  author={Jenkins, John and Dinan, James and Balaji, Pavan and Samatova, Nagiza F and Thakur, Rajeev},
+  booktitle={Cluster Computing (CLUSTER), 2012 IEEE International Conference on},
+  pages={468--476},
+  year={2012},
+  organization={IEEE}
+}
+
+@misc{boostmpi,
+  author = "Gregor, Douglas and Troyer, Matthias",
+  title = "{Boost.MPI Library \url{http://www.boost.org}}",
+  year = "2014",
+  url = "http://www.boost.org/doc/libs/1_56_0/doc/html/mpi.html",
+  note = "[accessed 2014-09-04]"
+}
+
+@article{balaji2011mpi,
+  title={{MPI} on millions of cores},
+  author={Balaji, Pavan and Buntinas, Darius and Goodell, David and Gropp, William and Hoefler, Torsten and Kumar, Sameer and Lusk, Ewing and Thakur, Rajeev and Tr{\"a}ff, Jesper Larsson},
+  journal={Parallel Processing Letters},
+  volume={21},
+  number={01},
+  pages={45--60},
+  year={2011},
+  publisher={World Scientific}
+}
+
+@Article{latham:grequest-extensions,
+  author = {Robert Latham and William Gropp and Robert Ross and Rajeev Thakur},
+  title = {{Extending the MPI-2 generalized request interface}},
+  journal = {Lecture Notes in Computer Science},
+  booktitle = {14th European PVM/MPI User's Group Meeting},
+  note ={(EuroPVM/MPI 2007)},
+  year = {2007},
+  month = {October},
+  pages = {223-232},
+  doi = {10.1007/978-3-540-75416-9_33},
+  url = {http://www.springerlink.com/content/y332095819261422},
+  publsher = {Springer-Verlag Heidelberg},
+  pdf = {papers/latham_grequest-enhance.pdf},
+  abstract = {The MPI-2 standard added a new feature to MPI called generalized
+              requests. Generalized requests allow users to add new nonblocking
+              operations to MPI while still using many pieces of MPI
+              infrastructure such as request objects and the progress
+              notification routines (MPI_Test, MPI_Wait). The generalized request
+              design as it stands, however, has deficiencies regarding
+              typical use cases. These deficiencies are particularly evident in
+              environments that do not support threads or signals, such as the
+              leading petascale systems (IBM Blue Gene/L, Cray XT3 and XT4).
+              This paper examines these shortcomings, proposes extensions to
+              the interface to overcome them, and presents implementation
+              results.},
+}
+@incollection{shalf2011exascale,
+    title={Exascale computing technology challenges},
+    author={Shalf, John and Dosanjh, Sudip and Morrison, John},
+    booktitle={High Performance Computing for Computational Science--{VECPAR} 2010},
+    pages={1--25},
+    year={2011},
+    publisher={Springer}
+}

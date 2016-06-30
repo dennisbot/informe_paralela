@@ -1,0 +1,14 @@
+\BOOKMARK [1][-]{section.1}{Introducci\363n}{}% 1
+\BOOKMARK [1][-]{section.2}{Antecedentes}{}% 2
+\BOOKMARK [1][-]{section.3}{Dise\361o principal}{}% 3
+\BOOKMARK [1][-]{section.4}{Implementaci\363n de un Cluster MPI}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{Compilando MPI}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{Usando SSH en lugar de password entre PCs}{section.4}% 6
+\BOOKMARK [2][-]{subsection.4.3}{Instalando NFS}{section.4}% 7
+\BOOKMARK [1][-]{section.5}{Instalaci\363n y uso de la librer\355as BigMPI}{}% 8
+\BOOKMARK [1][-]{section.6}{Pruebas de Rendimiento en un Cluster MPI}{}% 9
+\BOOKMARK [2][-]{subsection.6.1}{Prueba 1 : Ancho de banda del Cluster}{section.6}% 10
+\BOOKMARK [2][-]{subsection.6.2}{Prueba 2 : tiempo de transmisi\363n en el Cluster}{section.6}% 11
+\BOOKMARK [2][-]{subsection.6.3}{Prueba 3 : tiempo de Operaci\363n del producto punto}{section.6}% 12
+\BOOKMARK [1][-]{section.7}{Conclusiones}{}% 13
+\BOOKMARK [1][-]{section*.1}{Appendix A: C\363digo fuente usado en la medici\363n}{}% 14

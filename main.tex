@@ -1,0 +1,1221 @@
+
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE!
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[conference]{IEEEtran}
+\usepackage[utf8]{inputenc}
+\usepackage{blindtext}
+\usepackage{amssymb, amsmath}
+\usepackage[dvips]{graphicx}
+\usepackage{epsfig}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{rotating}
+\usepackage{textcomp}
+\usepackage{ifthen}
+\usepackage{comment}
+%\usepackage{algorithm}
+%\usepackage{algorithmic}
+\usepackage[pdfborder={0 0 0}]{hyperref}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{wrapfig}
+\usepackage{cleveref}
+\usepackage{hyperref}
+\let\labelindent\relax
+\usepackage{enumitem}
+\usepackage{kantlipsum}
+\usepackage{array}
+\lstnewenvironment{code}{\lstset{language=C,basicstyle=\scriptsize\ttfamily}}{}
+
+\definecolor{bloodred}{rgb}{0.7,0.0,0.0}
+\newcommand{\todo}[1]{%
+  \noindent{%
+    \color{bloodred}{%
+      \textbf{TODO:} #1%
+    }%
+  }%
+}
+
+\newcommand{\note}[1]{%
+  \noindent{%
+    \color{blue}{%
+      \textbf{NOTE:} #1%
+    }%
+  }%
+}
+
+\hyphenation{data-type}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+\lstset{escapechar=@,style=customc}
+\renewcommand{\lstlistingname}{Código fuente}
+%\usepackage[width=7.25in,height=9.53in]{geometry}
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\hypersetup{colorlinks=false,linkbordercolor=red,linkcolor=green,pdfborderstyle={/S/U/W 1}}
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{Explorando el soporte para large-count en MPI-3\\¡Al \texttt{INT\_MAX} y más allá!}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{Pavel Mendoza}
+\IEEEauthorblockA{Maestría en Ciencias\\de la Computación\\
+Universidad Católica San Pablo\\
+Email: pmendozav@gmail.com}
+\and
+\IEEEauthorblockN{Dennis Huillca}
+\IEEEauthorblockA{Maestría en Ciencias\\de la Computación\\
+Universidad Católica San Pablo\\
+Email: dennisbot@gmail.com}
+}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+%
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3},
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+
+\begin{abstract}
+%\boldmath
+Para describir una región de memoria en MPI, el estándar usa el par
+(count, datatype). La especificación de C para esta convención usa
+un tipo \texttt{int} para el count. Dado que los tipos \texttt{int} de C son
+casi siempre 32 bits de largo y con signo, el contar más de
+$2^{31}$ elementos resulta un reto. En lugar de cambiar
+las rutinas existentes de MPI y en consecuencia a todos los
+consumidores de estas rutinas, en los foros de MPI se asegura
+que los usuarios pueden crear grandes tipos de datos a partir de tipos más pequeños.
+Para evaluar esta hipótesis y para proveer una solución user-friendly para el
+problema del large-count, fue desarrollada la librería BigMPI~\cite{large-count-problem},
+una librería construida encima de MPI que mapea funciones
+large-count parecidas a las de MPI a aquellas de MPI-3 con sus características
+estándar. BigMPI demuestra una forma de realizar dicha construcción y
+revela fallos en el actual estándar MPI.
+En el presente articulo pretendemos demostrar
+su desempeño y el grado de overhead que añade su uso a través de la
+prueba en un cluster de 3 computadores Xeon E3-1200 4th Gen de 4 Núcleos.
+\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the journal you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals frown on math
+% in the abstract anyway.
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+BigMPI, \texttt{MPI\_Count}, \texttt{MPI\_Aint}, \texttt{size\_t}, ILP32, IL32P64, I32LP64.
+\end{IEEEkeywords}
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introducción}
+MPI (Message Passing Interface)~\cite{{mpiforum:94, mpiforum:96, mpiforum:09, mpiforum:12}},
+define un amplio conjunto de funcionalidades
+para escribir programas paralelos, especialmente entre sistemas de computación
+distribuida. Ahora, después de más de 22 años, MPI continúa siendo ampliamente
+usado y ha llegado incluso a ser usado en un millón de
+núcleos~\cite{{balaji2011mpi}}, para poder
+escalar en términos del tamaño del problema, uno necesita describir grandes
+conjuntos de datos, la existencia del par (count, datatype) funciona bien hasta
+que "count" excede el rango del tipo entero nativo (en el caso de la interface C
+el tipo es \texttt{int}, el cuál es de 32 bits en la mayoría de plataformas).
+A esto le llamamos el problema del "large-count".
+
+Cuando se realizó el borrador de MPI-3, el foro de MPI tomó poca importancia
+al soporte de "large-count"~\cite{ticket265}. El foro introdujo un conjunto de rutinas MPI\_Foo\_x
+que proveían un equivalente al "large-count" de un MPI\_Foo logrando así al menos
+tener un soporte rudimentario al problema del "large-count". Para ser explícito
+en este contexto, Foo es "Get\_elements", "Type\_size", "Type\_get\_extend",
+"Type\_get\_true\_extend" y "Status\_set\_elements", el cuál es el conjunto mínimo de
+funciones que debe soportar el problema del "large-count" para poder manipular
+tipos de datos derivados que representan "large-counts". Después de largas
+deliberaciones, el foro concluyó: "sólo usen tipos de datos" es la solución
+suficiente para los usuarios~\cite{squyres-blog-large-count}. Por ejemplo uno puede describir 4 mil millones de bytes
+como mil millones de enteros de 4 bytes. O, uno puede usar tipos de datos MPI
+contiguos para describir 16 mil millones de bytes como 1,000 16 millones de bloques.
+Para estos ejemplos simples, uno puede fácilmente visualizar una solución. Sólo a
+través de la implementación al enfoque propuesto para todos los casos en MPI uno
+descubre los retos escondidos en tales aseveraciones.
+
+BigMPI provee un librería al más alto nivel que se esfuerza en soportar "large-counts".
+Fue escrito para probar la aseveración del foro en el que los tipos de datos son
+suficientes para el soporte del "large-count" y como para crear una librería como solución
+para aplicaciones que requerían soporte para el "large-count". En este contexto, "large-count"
+es cualquier cantidad que excede \texttt{INT\_MAX}. BigMPI hace el menor cambio posible a las
+rutinas estándar de MPI para habilitar "large-counts", minimizando los cambios en la aplicación.
+
+BigMPI está diseñado para el caso común donde uno tiene un espacio de direcciones de 64 bits
+y no puede hacer comunicaciones MPI en más de $2^{31}$ elementos a pesar de tener suficiente
+memoria para reservar tales buffers. Dado que los sistemas con más de $2^{63}$ bytes (8192 PiB)
+de memoria por nodo son improbables que existan en un futuro cercano---la capacidad total del
+sistema de memoria para una máquina de exa-escala ha sido predicha a ser de 50--100
+petabytes~\cite{shalf2011exascale}---
+BigMPI no se esfuerza en soportar todo ese rango de \texttt{MPI\_Count}
+(posiblemente un entero de 128 bits) internamente; sino más bien
+usa \texttt{size\_t} y \texttt{MPI\_Aint} dado que estos tipos
+reflejan realmente los límites de la memoria disponible en lugar del tamaño teórico del
+archivo del sistema (tal como \texttt{MPI\_Count} lo hace).
+
+\section{Antecedentes}
+El estándar MPI provee un amplio rango de funciones de comunicación que toman como argumento
+un entero \texttt{int} en C para la cantidad de elementos a transmitir, de este modo limitando
+este valor a \texttt{INT\_MAX} o menos, por lo tanto, uno no puede enviar por ejemplo, 3 mil
+millones de bytes usando el tipo de datos \texttt{MPI\_BYTE} o un vector de 5 mil millones de
+enteros usando el tipo \texttt{MPI\_INT}.
+
+Estas limitaciones podrían parecer académicas: 2 mil millones de \texttt{MPI\_DOUBLE} es igual
+a 16 GB, y uno podría pensar que las aplicaciones podrían raramente necesitar transmitir tal
+cantidad de datos, dado que podría haber menos de la memoria disponible para todo el espacio
+de direcciones en el cuál el proceso MPI está ejecutándose. Dos tendencias recientes podrían
+mostrar esta limitación incrementalmente no práctica, sin embargo: primero, el crecimiento de
+poder computacional por nodo implica el incremento de datos por proceso MPI dentro de un contexto
+de escalamiento débil, y segundo, aplicaciones de Big Data podría requerir más memoria por proceso
+que los códigos de simulación tradicionales que resuelven la ecuación de movimiento para un
+dominio particular de las ciencias físicas.
+
+\begin{figure}
+\begin{code}
+int MPIX_Send_x(const void *buf, MPI_Count count,
+                MPI_Datatype dt, int dest,
+                int tag, MPI_Comm comm)
+{
+    int rc = MPI_SUCCESS;
+    if (likely (count <= INT_MAX )) {
+        rc = MPI_Send(buf, (int)count, dt, dest, tag, comm);
+    } else {
+        MPI_Datatype newtype;
+        MPIX_Type_contiguous_x(count, dt, &newtype);
+        MPI_Type_commit(&newtype);
+        rc = MPI_Send(buf, 1, newtype, dest, tag, comm);
+        MPI_Type_free(&newtype);
+    }
+    return rc;
+}
+\end{code}
+\caption{Implementación de un envío usando un "large-count", el cuál sirve como plantilla
+para muchas otras rutinas MPI-3.\label{code:mpi_send_x}}
+\end{figure}
+
+En la publicación de referencia usada para este articulo se hace referencia
+también a los problemas con las interfaces C, y usamos las bien conocidas convenciones
+I$n_{I}$L$n_{L}$P$n_{P}$ para referirnos a los tamaños de los tipos C \texttt{int}, \texttt{long}
+, \texttt{void*}, respectivamente. Para sistemas ILP32, el buffer más grande que uno puede
+reservar es $2^{32}$ bytes (4 GiB), mientras que MPI puede manipular buffers de hasta 2 GiB;
+el factor de diferencia 2 casi nunca es un problema dado que 4 GiB de \texttt{int}, por ejemplo
+requiere un count de sólo $2^{30}$. El problema surge en sistemas de IL32P64 y I32LP64 porque
+uno puede reservar más memoria en un buffer del que puede ser capturado con un count entero y
+un tipo de dato pre-incluido, por ejemplo un vector de 3 mil millones de floats requiere
+12 GB de memoria pero no puede ser comunicado con ninguna rutina de comunicación usando
+tipos de datos pre-incluidos.
+
+\section{Diseño principal}
+En esta sección se describe el mapeo de una variante de funciones de comunicación al
+estilo MPI hacia funciones MPI-3. Esta tarea usualmente involucra crear un tipo de datos
+"large-count". BigMPI implementa todas las variantes de (bcast, gather, scatter, allgather, alltoall
+) y RMA (put, get, accumulate, get\_accumulate) por ejemplo la función Send en la Figura 1.
+Esta clase de rutinas provee la funcionalidad MPI comunmente usada.
+
+Las función crítica en todas las implementaciones de "large-count" vistas arriba es
+\texttt{MPIX\_Type\_contiguous\_x}, el cual emite un único tipo de dato que representa hasta \texttt{SIZE\_MAX}
+elementos. Esta rutina de utilidad nos permite implementar soporte al "large-count" de una
+forma sencilla dado que todas las instancias de $(large\_count,type)$ son mapeadas a $(1,large\_type)$
+por esta función. La Figura 2 muestra tal implementación.
+
+% split MPI_TYPE_CREATE_STRUCT below on two lines to fix an overfull warning
+\begin{figure}
+\begin{code}
+int MPIX_Type_contiguous_x(MPI_Count count,
+                           MPI_Datatype oldtype,
+                           MPI_Datatype * newtype)
+{
+    assert(count<SIZE_MAX);
+    MPI_Count c = count/INT_MAX, r = count%INT_MAX;
+
+    MPI_Datatype chunks, remainder;
+    MPI_Type_vector(c, INT_MAX, INT_MAX, oldtype, &chunks);
+    MPI_Type_contiguous(r, oldtype, &remainder);
+
+    MPI_Aint lb , extent;
+    MPI_Type_get_extent(oldtype, &lb, &extent);
+
+    MPI_Aint remdisp          = (MPI_Aint)c*INT_MAX*extent;
+    int blklens[2]            = {1,1};
+    MPI_Aint disps[2]         = {0,remdisp};
+    MPI_Datatype types[2]     = {chunks,remainder};
+    MPI_Type_create_struct(2, blklens, disps, types,
+             newtype);
+
+    MPI_Type_free(&chunks);
+    MPI_Type_free(&remainder);
+
+    return MPI_SUCCESS;
+}
+\end{code}
+\caption{Función para la construcción de un tipo de dato contiguo "large-count".
+un vector de tipo describe una serie de bloques adyacentes, y un tipo de estructura
+recoje cualquier dato restante en caso el count no sea divisible de forma exacta.}
+\label{code:type_contig_x}
+\end{figure}
+
+\section{Implementación de un Cluster MPI}
+
+En esta sección se describe las instrucciones llevadas a cabo para construir un cluster MPI
+el cual se usarán posteriormente para probar el rendimiento de la librería
+BigMPI~\cite{big-mpi-library}, para mayor referencia ver~\cite{mpi-cluster-lan-raspberry} y
+~\cite{mpi-cluster-lan}.
+
+\subsection{Compilando MPI}
+\begin{enumerate}
+\item Refrescar la lista de paquetes y sus versiones en caché.
+  \begin{itemize}
+  \item[--] \texttt{\$ sudo apt-get update}
+  \end{itemize}
+\item Instala nuevas versiones
+  \begin{itemize}
+  \item[--] \texttt{\$ sudo apt-get upgrade}
+  \end{itemize}
+\item hacer un directorio para poner las fuentes ahí
+  \begin{itemize}
+  \item[--] \texttt{\$ mkdir /home/username/mpich2}
+  \item[--] \texttt{\$ cd \texttildelow/mpich2}
+  \end{itemize}
+\item Obtener el código fuente MPI de Argonne.
+  \begin{itemize}
+  \item[--] \texttt{\href{http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs/1.4.1p1/mpich2-1.4.1p1.tar.gz}{wget URL}}
+  \item[--] notar que se puede navegar \href{http://www.mpich.org/downloads/}{aquí} para
+obtener la última versión.
+  \end{itemize}
+\item Desempaquetarlo (usar la versión que corresponda)
+  \begin{itemize}
+  \item[--] \texttt{\$ tar xfz mpich2-1.4.1p1.tar.gz}
+  \end{itemize}
+\item Create un lugar para poner tus compilaciones - te ayudará para darte cuenta que de nuevo
+pusiste en tu sistema.
+  \begin{itemize}
+  \item[--] \texttt{\$ sudo mkdir /home/username/}
+  \item[--] \texttt{\$ sudo mkdir /home/username/mpich2-install}
+  \end{itemize}
+\item Create un directorio de compilación (de manera que tendremos el directorio de código limpio)
+  \begin{itemize}
+  \item[--] \texttt{\$ mkdir /home/username/mpich\_build}
+  \end{itemize}
+\item Cambiamos al directorio build
+  \begin{itemize}
+  \item[--] \texttt{\$ cd /home/username/mpich\_build}
+  \end{itemize}
+\item Ahora configuramos el build
+  \begin{itemize}
+  \item[--] \texttt{\$ sudo /home/username/mpich2/\\mpich2-1.4.1p1/configure -prefix=/home/username/
+mpich2-install}
+  \end{itemize}
+\item Hacer make a los archivos
+  \begin{itemize}
+  \item[--] \texttt{\$ sudo make}
+  \end{itemize}
+\item Instalar los archivos
+  \begin{itemize}
+  \item[--] \texttt{\$ sudo make install}
+  \end{itemize}
+\item Añadir la ubicación de tu instalación en el PATH
+  \begin{itemize}
+  \item[--] \texttt{\$ export PATH=\$PATH:/home/\\username/mpich2-install/bin}
+  \end{itemize}
+\item Notar que para añadir permanentemente al PATH necesitaremos editar
+el archivo \texttt{\texttildelow/.profile} y dentro añadir las sgte línea.
+  \begin{itemize}
+  \item[--] \texttt{PATH="\$PATH:/home\\/username/mpich2/bin"}
+  \end{itemize}
+\item Revisamos si las cosas se instalaron o no
+  \begin{itemize}
+  \item[--] \texttt{\$ which mpicc}
+  \item[--] \texttt{\$ which mpiexec}
+  \end{itemize}
+\item Cambiar el directorio de regreso a home y crear un directorio
+para hacer tus pruebas.
+  \begin{itemize}
+  \item[--] \texttt{\$ cd \texttildelow}
+  \item[--] \texttt{\$ mkdir mpi\_testing}
+  \item[--] \texttt{\$ cd mpi\_testing}
+  \end{itemize}
+\item Ahora probamos si MPI funciona en un único nodo
+  \begin{itemize}
+  \item[--] \texttt{\$ mpiexec -f machinefile -n <number> master}
+  \end{itemize}
+\end{enumerate}
+Donde machinefile contiene una lista de direcciones IP (en este caso)
+\begin{enumerate}[resume]
+\item Ahora probamos si MPI funciona en un único nodo para las máquinas.
+  \begin{itemize}
+  \item[--] Obtén tu dirección IP:
+  \item[--] \texttt{\$ ifconfig}
+  \item[--] Poner esto dentro de un único archivo llamado\\machilefile:
+  \item[--] \texttt{nano machinefile}
+  \item[--] Add this line:
+  \item[--] \texttt{192.168.1.161} [o la IP que tengas]
+  \end{itemize}
+\end{enumerate}
+Ahora ejecutamos código C. En el ejemplo de subdirectorio de donde
+compilas MPI.
+\begin{enumerate}[resume]
+\item \texttt{\$ cd /home/username/mpi\_testing}
+\item \texttt{\$ mpiexec -f machinefile -n 2 \texttildelow/mpich\_build/examples/cpi}
+  \begin{itemize}
+    \item[---] La salida es:
+    \begin{itemize}
+      \item[--] Proceso 0 de 2 en master
+      \item[--] Proceso 1 de 2 en master
+    \end{itemize}
+  \end{itemize}
+\end{enumerate}
+
+\subsection{Usando SSH en lugar de password entre PCs}
+En esta sub-sección se muestra como crear una cuenta SSH para poder manipular los
+equipos que se usarán como parte del cluster, para mayor referencia revisar
+~\cite{how-to-setup-ssh-keys}.
+\begin{enumerate}
+\item Nos posicionamos en el directorio home de username
+  \begin{itemize}
+  \item[--] \texttt{\$ cd \texttildelow}
+  \end{itemize}
+\item Generamos las claves públicas y privadas
+  \begin{itemize}
+  \item[--] \texttt{\$ ssh-keygen -t rsa "username@master"}
+  \end{itemize}
+\end{enumerate}
+Esto establece la ubicación por defecto de
+\texttt{/home/username/.ssh/id\_rsa} para almacenar la clave
+insertamos enters (no usaremos passphrase) y nuestras claves estarán
+listas para ser usadas.
+
+\begin{enumerate}[resume]
+\item Ingresamos nuestra clave pública al archivo de claves autorizadas del cliente
+para poder conectarnos sin necesidad de password.
+  \begin{itemize}
+  \item[--] \texttt{\$ cat \texttildelow/.ssh/id\_rsa.pub | ssh cliente@192.168.1.162 "mkdir .ssh;cat >> .ssh/authorized\_keys"}
+  \end{itemize}
+\item Si te logueas en la pc cliente y haces:
+  \begin{itemize}
+  \item[--] \texttt{\$ ls -al \texttildelow/.ssh}
+  \item[--] deberías ver un archivo llamada "authorized\_keys" -- este es tu ticket para
+no estar usando siempre el login en los nodos al conectarse cada vez usando ssh.
+  \end{itemize}
+\item Ahora agregemos la nueva máquina del cliente al archivo machinefile
+(nos logueamos vía ssh y recuperamos su IP).
+  \begin{itemize}
+  \item[--] Trabajando en la PC master
+  \item[--] \texttt{\$ nano machinefile} y luego añadir:
+  \item[] \texttt{192.168.1.161}
+  \item[] \texttt{192.168.1.162}
+  \item[--] (o según fuera las IPs según su contexto)
+  \end{itemize}
+\end{enumerate}
+\subsection{Instalando NFS}
+Ahora tenemos que compartir un directorio vía NFS en la pc \textbf{master} en la
+cual los \textbf{clientes} montarán para intercambiar datos.
+
+\textbf{\textit{Servidor NFS}}
+\begin{enumerate}
+  \item[--] Instalamos los paquetes requeridos con el sgte comando
+  \item[] \texttt{\$ sudo apt-get install nfs-kernel-server}
+\end{enumerate}
+Asumiendo que aún estás logueado como \textbf{username}, vamos a crear un directorio con el
+nombre \textbf{cloud} el cual compartiremos en la red.
+\begin{enumerate}[resume]
+\item[] \texttt{\$ mkdir cloud}
+\end{enumerate}
+para exportar el directorio \textbf{cloud}, creas una entrada en \textbf{etc/exportfs}
+\begin{enumerate}[resume]
+\item[] \texttt{\$ cat /etc/exportfs}
+\item[] \texttt{\/home/username/cloud *(rw,sync,no\_root\_squash, no\_subtree\_check)}
+\end{enumerate}
+Aquí, en lugar de \textbf{*} puedes dar a cualquier persona la dirección IP con quién
+quieres compartir este directorio, pero esto sólo hará que nuestro trabajo sea más fácil.
+\begin{enumerate}[resume]
+\item[--] Después de haber hecho una entrada en el paso anterior, ejecutar lo sgte.
+\item[] \texttt{exports -a}
+\item[--] ejecutar este comando cada vez que hagas un cambio en \texttt{/etc/exports}
+\item[--] Si es requerido, reiniciar el servidor \textbf{nfs}
+\item[] \texttt{\$ sudo service nfs-kernel-server restart}
+\end{enumerate}
+
+\textbf{\textit{Cliente NFS}}
+
+Instalar los paquetes requeridos
+\begin{enumerate}
+  \item[] \texttt{\$ sudo apt-get install nfs-common}
+\end{enumerate}
+
+Crear un directorio en la máquina cliente con el mismo nombre \texttt{cloud}
+\begin{enumerate}
+  \item[] \texttt{\$ mkdir cloud}
+\end{enumerate}
+
+Y ahora, montar el directorio compartido como
+\begin{enumerate}
+  \item[] \texttt{\$ sudo mount -t nfs master:/home/username/cloud \texttildelow/cloud}
+\end{enumerate}
+
+Para verificar los directorios montados
+\begin{enumerate}
+  \item[] \texttt{\$ df -h}
+  \item[] \texttt{Filesystem}
+  \item[] \texttt{master:/home/username/cloud}
+\end{enumerate}
+
+Para que el montaje sea permanente de forma que no tengas que montar manualmente
+el directorio compartido cada vez, tendrás que hacer un reinicio de sistema, puedes
+crear una entrada en el sistema de tablas de archivos -i.e el archivo \texttt{/etc/fstab}
+como esto.
+\begin{enumerate}
+  \item[] \texttt{\$ cat /etc/fstab}
+  \item[] \texttt{\#MPI CLUSTER SETUP}
+  \item[] \texttt{master:/home/username/cloud /home/username/cloud nfs}
+\end{enumerate}
+
+Ahora desde la máquina master, copia tus ejecutables en un directorio compartido
+\texttt{cloud} o aún mejor, compila tu código dentro del directorio compartido NFS.
+\begin{enumerate}
+  \item[] \texttt{\$ cd cloud/}
+  \item[] \texttt{\$ pwd}
+  \item[] \texttt{/home/username/cloud}
+\end{enumerate}
+
+Ahora ejecutamos el código C del ejemplo CPI.
+
+Te pedirá llenar tu passphrase (a menos que durante la generación de
+las claves pública y privada lo hayas dejado en blanco).
+\begin{enumerate}
+  \item[] \texttt{\$ cd /home/username/username/cloud}
+  \item[] \texttt{\$ mpiexec -f machinefile -n 2 \texttildelow/username/cloud/cpi}
+\end{enumerate}
+
+la salida será:
+
+Proceso 0 de 2 en master
+
+Proceso 1 de 2 en master
+
+Si cambias el hostname de tu segunda PC (cliente) y ejecutas:
+\begin{enumerate}
+  \item[] \texttt{\$ mpiexec -f machinefile -n 2 \texttildelow/username/cloud/cpi}
+\end{enumerate}
+
+la salida será:
+
+Proceso 0 de 2 en master
+
+Proceso 1 de 2 en cliente
+
+Felicitaciones, finalmente construiste un cluster de 2 computadoras,
+puedes repetir el proceso para muchas más computadoras.
+
+\section{Instalación y uso de la librerías BigMPI}
+En esta sección describiremos paso a paso como compilar y hacer uso de la librería BigMPI
+dentro del cluster construido previamente.
+
+El proyecto se encuentra en \href{https://github.com/jeffhammond/BigMPI}{github.com/jeffhammond}
+podemos realizar una clonación o simplemente descargarlo como zip y luego extraerlo en un directorio
+dentro de nuestro sistema de archivos y renombrar la carpeta como por ejemplo.
+\begin{enumerate}
+\item[] \texttt{\$ cd /home/username/bigmpi}
+\end{enumerate}
+A partir de aquí empezamos a ejecutar los comandos en el terminal para compilar y ejecutar
+los programas que hacen uso de BigMPI.
+Creamos un archivo bash para poder ejecutar las siguientes instrucciones que vienen
+acompañadas del paquete BigMPI.
+\begin{enumerate}
+\item[] \texttt{\$ cmake /home/username/bigmpi -DCMAKE\_C\_COMPILER=mpicc}
+\item[] \texttt{\$ export MPI\_IMPL=mpich}
+\item[] \texttt{\$ export CC=lang}
+\item[] \texttt{\$ sh ./install-deps.sh \$MPI\_IMPL}
+\item[] \texttt{\$ sh ./build-run.sh}
+\end{enumerate}
+
+Con todas esas instrucciones de linea de comandos podemos a continuación dirigirnos
+a la carpeta test en donde se generarán nuestros ejecutables que hacen uso de la librería
+BigMPI, a partir de aquí ya podemos experimentar con nuestros programas escritos en MPI.
+
+\section{Pruebas de Rendimiento en un Cluster MPI}
+En la presente sub-sección realizaremos varios experimentos dentro del cluster
+que acabamos de crear en la subsección anterior, esto con el fin de
+probar el rendimiento de la librería BigMPI en un sistema de memoria distribuida.
+Para esto usaremos 3 computadoras.
+
+\subsection{Prueba 1 : Ancho de banda del Cluster}
+% \kant[1-2]
+\begin{table}[htb]
+\caption{Transmisión de datos en cluster - Resultados (B/s)}
+\label{1234}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{c*{5}{>{$}c<{$}}}
+& \text{GigaBytes(GB)}  & \text{MPI (MB / segs.)} & \text{BigMPI (MB / segs.)}\\
+& 0.05 & 58.38 & 58.38\\
+& 0.1  & 58.38 & 58.38\\
+& 0.5  & 58.39 & 58.38\\
+& 1    & 58.39 & 58.31\\
+& 2    & 58.32 & 58.31\\
+& 3    & No Aplicable & 58.31
+\end{tabular}
+}
+\end{table}
+% \kant[3-5]
+\subsection{Prueba 2 : tiempo de transmisión en el Cluster}
+% \kant[1-2]
+\begin{table}[htb]
+\caption{Transmisión de datos 2GB (s)}
+\label{1234}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{c*{5}{>{$}c<{$}}}
+& \text{Núcleos(GB)}  & \text{MPI (segs.)} & \text{BigMPI (segs.)}\\
+& 2 & 17.15 & 17.14\\
+& 4  & 34.7 & 34.7\\
+& 6  & 52.27 & 52.25\\
+& 8    & 189.6 & 99.31\\
+& 10    & 176.6 & 158.8\\
+& 12    & 307.2 & 319.3
+\end{tabular}
+}
+\end{table}
+% \kant[3-5]
+\subsection{Prueba 3 : tiempo de Operación del producto punto}
+% \kant[1-2]
+\begin{table}[htb]
+\caption{Algoritmo de prueba con 2GB de carga}
+\label{1234}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{c*{5}{>{$}c<{$}}}
+& \text{Núcleos(GB)}  & \text{MPI (segs.)} & \text{BigMPI (segs.)}\\
+& 2 & 10.1 & 10.1\\
+& 4  & 6.88 & 6.87\\
+& 6  & 5.74 & 5.76\\
+& 8    & 5.34 & 5.48\\
+& 10    & 5.05 & 5.06\\
+& 12    & 4.86 & 4.86
+\end{tabular}
+}
+\end{table}
+% \kant[3-5]
+
+\section{Conclusiones}
+En el presente trabajo se encontró el inconveniente del límite de memoria disponible
+en nuestras computadoras de laboratorio (8GB de RAM), que durante nuestras pruebas
+ocasionaron que la computadora master se cuelgue con counts más allá de $2^{31}$.
+
+Se realizaron las pruebas de rendimiento utilizando un cluster
+de computadoras y en el que se concluyó el poco overhead añadido considerando los pocos
+datos con los que logramos probar (debido al problema descrito en el parrafo anterior).
+
+Se verificó el funcionamiento adecuado de las funciones extendidas de BigMPI,
+tales como: \texttt{MPIX\_Send\_x}
+y \texttt{MPIX\_Recv\_x} que nos permiten transmitir más allá de los $2^{31}$ elementos
+que las  nos permiten realizar las funciones estándar de MPI,
+
+Se evidencia la importancia de este aporte, tanto que ya se considera su soporte en MPI de forma
+nativa para la especificación Nro. 4 que aún no ha salido~\cite{mpi4}.
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,bib/biblio,bib/petsc}
+\onecolumn
+\appendices
+\section{Código fuente usado en la medición}
+\lstinputlisting[caption=Medición del ancho de banda con MPI, style=customc]{code/bandwidth_mpi.c}
+\lstinputlisting[caption=Medición del ancho de banda con BigMPI, style=customc]{code/bandwidth_bigmpi.c}
+\lstinputlisting[caption=prueba de envío y recepción con mpi, style=customc]{code/test_send_recv_mpi.c}
+\lstinputlisting[caption=prueba de envío y recepción con bigmpi, style=customc]{code/test_send_recv_bigmpi.c}
+\lstinputlisting[caption=prueba de producto punto con BigMPI, style=customc]{code/prueba_x_bigmpi.c}
+\lstinputlisting[caption=prueba de producto punto con MPI, style=customc]{code/prueba_x_mpi.c}
+\clearpage
+\newpage
+\twocolumn
+
+% needed in second column of first page if using \IEEEpubid
+%\IEEEpubidadjcol
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex,
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+%
+%\begin{figure*}[!t]
+%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals use top floats exclusively.
+% Note that, LaTeX2e, unlike IEEE journals, places footnotes above bottom
+% floats. This can be corrected via the \fnbelowfloat command of the
+% stfloats package.
+
+
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+% begin dennisbot
+% \appendices
+% \section{Proof of the First Zonklar Equation}
+% \blindtext
+
+% use section* for acknowledgement
+% \section*{Acknowledgment}
+
+% end dennisbot
+
+% The authors would like to thank...
+
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+
+% \begin{thebibliography}{1}
+
+% \bibitem{IEEEhowto:kopka}
+% H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%   0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+% \end{thebibliography}
+
+% \bibliographystyle{IEEEtran}
+% \bibliography{IEEEabrv,bib/biblio,bib/petsc}
+
+% biography section
+%
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{biography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+% or if you just want to reserve a space for a photo:
+
+% \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{picture}}]{John Doe}
+% \blindtext
+% \end{IEEEbiography}
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+
+
+
+% that's all folks
+\end{document}
+
+
