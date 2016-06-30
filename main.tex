@@ -924,7 +924,7 @@ dentro de nuestro sistema de archivos y renombrar la carpeta como por ejemplo.
 A partir de aquí empezamos a ejecutar los comandos en el terminal para compilar y ejecutar
 los programas que hacen uso de BigMPI.
 Creamos un archivo bash para poder ejecutar las siguientes instrucciones que vienen
-acompañadas del paquete BigMPI.
+acompañadas con el paquete BigMPI.
 \begin{enumerate}
 \item[] \texttt{\$ cmake /home/username/bigmpi -DCMAKE\_C\_COMPILER=mpicc}
 \item[] \texttt{\$ export MPI\_IMPL=mpich}
@@ -933,7 +933,7 @@ acompañadas del paquete BigMPI.
 \item[] \texttt{\$ sh ./build-run.sh}
 \end{enumerate}
 
-Con todas esas instrucciones de linea de comandos podemos a continuación dirigirnos
+Con todas esas instrucciones de línea de comandos podemos a continuación dirigirnos
 a la carpeta test en donde se generarán nuestros ejecutables que hacen uso de la librería
 BigMPI, a partir de aquí ya podemos experimentar con nuestros programas escritos en MPI.
 
@@ -1010,7 +1010,7 @@ datos con los que logramos probar (debido al problema descrito en el parrafo ant
 Se verificó el funcionamiento adecuado de las funciones extendidas de BigMPI,
 tales como: \texttt{MPIX\_Send\_x}
 y \texttt{MPIX\_Recv\_x} que nos permiten transmitir más allá de los $2^{31}$ elementos
-que las  nos permiten realizar las funciones estándar de MPI,
+que las que nos permiten realizar las funciones estándar de MPI,
 
 Se evidencia la importancia de este aporte, tanto que ya se considera su soporte en MPI de forma
 nativa para la especificación Nro. 4 que aún no ha salido~\cite{mpi4}.
